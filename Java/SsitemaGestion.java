@@ -70,3 +70,18 @@ public class SistemaGestion {
         inventario.registrarVenta(nombre, cantidad);
     }
 }
+
+private static void predecirPrecios() {
+    try {
+        Process proceso = Runtime.getRuntime().exec("ruta/al/ejecutable_cpp");
+        proceso.waitFor();
+
+        // Leer la salida del proceso C++
+        Scanner salida = new Scanner(proceso.getInputStream());
+        while (salida.hasNextLine()) {
+            System.out.println(salida.nextLine());
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
